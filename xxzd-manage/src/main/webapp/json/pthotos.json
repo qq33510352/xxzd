@@ -1,0 +1,25 @@
+{
+	"title":"没有标题",//相册标题
+	"id":233,//相册id
+	"start":0,//初始显示的图片序号,默认为0
+	"data":[//包含的图片数组形式
+		{
+			"alt":"1",
+			"pid":1,//图片id
+			"src":"../images/006smjLKly1fvoa457lb3j31hc0u0jvm.jpg",//图片地址
+			"thumb":"../images/006smjLKly1fvoa457lb3j31hc0u0jvm.jpg"//缩略图地址
+		},
+		{
+			"alt":"2",
+			"pid":2,//图片id
+			"src":"../images/1490082154487.jpg",//图片地址
+			"thumb":"../images/1490082154487.jpg"//缩略图地址
+		},
+		{
+			"alt":"3",
+			"pid":3,//图片id
+			"src":"../images/32fa828ba61ea8d3f564de4c9c0a304e251f5837.jpg",//图片地址
+			"thumb":"../images/32fa828ba61ea8d3f564de4c9c0a304e251f5837.jpg"//缩略图地址
+		}
+	]
+}

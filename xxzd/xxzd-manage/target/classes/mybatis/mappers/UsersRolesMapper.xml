@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xxzd.mapper.UsersRolesMapper">
+	<delete id="deleteRolesByUserIds">
+		delete from users_roles where 
+		<foreach collection="array" item="userId" separator="or">
+			user_id=#{userId}
+		</foreach>
+	</delete>
+	<delete id="deleteUsersByRoleIds">
+		delete from users_roles where 
+		<foreach collection="array" item="roleId" separator="or">
+			role_id=#{roleId}
+		</foreach>
+	</delete>
+</mapper>

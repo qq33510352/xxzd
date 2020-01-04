@@ -1,0 +1,37 @@
+server:
+  port: 8083
+  servlet:
+    context-path: /
+spring:
+  datasource:
+    #引入druid数据源
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.14.1:3306/xxzd?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true
+    username: root
+    password: root
+
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+#mybatis-plush配置
+mybatis-plus:
+  type-aliases-package: com.xxzd.pojo
+  mapper-locations: classpath:/mybatis/mappers/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+logging:
+  level: 
+    com.xxzd.mapper: debug
+
+dubbo:
+  scan:
+    basePackages: com.xxzd      #包扫描路径
+  application:
+    name: provider-post       #注册中心提交的名字
+  registry:                   #注册中心地址
+    address: zookeeper://192.168.14.129:2181?backup=192.168.14.129:2182,192.168.14.129:2183
+  protocol:
+    name: dubbo               #协议名
+    port: 20881               #服务端口号

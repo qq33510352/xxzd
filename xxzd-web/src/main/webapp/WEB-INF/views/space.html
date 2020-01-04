@@ -1,0 +1,82 @@
+<!-- <%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html> -->
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../../layui/css/layui.css"/>
+<style type="text/css">
+	#head{
+		height: 150px;
+		background: url(../../images/你的名字1140150.jpg);
+	}
+</style>
+<body>
+	<!-- 列可以同时出现最多四种不同的组合，分别是：xs（超小屏幕，如手机）
+	、sm（小屏幕，如平板）、md（桌面中等屏幕）、lg（桌面大型屏幕） -->
+	<div class="layui-container">
+		<div class="layui-row">
+		    <div  id="head" class="layui-col-xs12 layui-col-sm12 layui-col-md12"></div>
+	    </div>
+		<div class="layui-row">
+			<div class="layui-tab layui-tab-brief layui-col-xs12 layui-col-sm12 layui-col-md12" lay-filter="headMenu">
+			  <ul class="layui-tab-title">
+			    <li class="layui-this" id="personal"><span class="layui-icon layui-icon-user"></span>个人信息</li>
+			    <li id="dynamic"><span class="layui-icon layui-icon-chart"></span>动态</li>
+			    <li id="myPost"><span class="layui-icon layui-icon-release"></span>我的发帖</li>
+			    <li id="commodity"><span class="layui-icon layui-icon-cart"></span>我出售的商品</li>
+			    <li id="cart" class="layui-icon layui-icon-cart-simple">购物车</li>
+				<li>我买到的商品</li>
+				<li>❤我的关注</li>
+				<li id="fans"><span class="layui-icon layui-icon-group"></span>我的粉丝</li>
+				<li><img src="../../img/帖子.jpg" >帖子收藏</li>
+			  </ul>
+			  <div class="layui-tab-content" style="height: 100px;">
+			    <div class="layui-tab-item layui-show" id="personalC">
+					
+				</div>
+			    <div class="layui-tab-item" id="dynamicC">动态</div>
+			    <div class="layui-tab-item">我的发帖</div>
+			    <div class="layui-tab-item">我出售的商品</div>
+			    <div class="layui-tab-item" id="cartC">购物车</div>
+			    <div class="layui-tab-item">我买到的商品内容</div>
+			    <div class="layui-tab-item">我的关注</div>
+			    <div class="layui-tab-item">我的粉丝</div>
+			    <div class="layui-tab-item">帖子收藏</div>
+			  </div>
+			</div> 
+		</div>
+	</div>
+</body>
+	<script src="../../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../layui/layui.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		layui.use(['layer','element','form'],function(){
+			var element = layui.element;
+			element.on('tab(headMenu)', function(data){
+				//当前Tab标题所在的原始DOM元素
+			  console.log(this.id)
+			  switch (this.id){
+				  case "personal":
+						$("#personalC").html(
+						"<div class='row'>"+
+						"<span class='layui-col-md3 layui-col-sm6 layui-col-xs6'>用户ID:123</span>"+
+						"<span class='layui-col-md3 layui-col-sm6 layui-col-xs6'>用户名ID:123</span>"+
+						"<span class='layui-col-md3 layui-col-sm6 layui-col-xs6'>密码:******** <button type='button' class='layui-btn layui-btn-sm' id='changePwd'>修改</button></span>"+
+						"<span class='layui-col-md3 layui-col-sm6 layui-col-xs6'>手机号:16685523007 <button type='button' class='layui-btn layui-btn-sm' id='changePwd'>修改</button></span></span>"+
+						"</div>"+
+						"<div class='row'>"+
+						"<span class='layui-col-md3 layui-col-sm6 layui-col-xs6'>邮箱:33510352@qq.com <button type='button' class='layui-btn layui-btn-sm' id='changePwd'>修改</button></span>"+
+						"<span class='layui-col-md3 layui-col-sm6 layui-col-xs6'>手机号:16685523007 <button type='button' class='layui-btn layui-btn-sm' id='changePwd'>修改</button></span></span>"+
+						"</div>")
+				  break;
+				  case "cart":
+						$("#cartC").html("购物车")
+				  break;
+			  }
+			});
+		})
+	</script>
+</html>

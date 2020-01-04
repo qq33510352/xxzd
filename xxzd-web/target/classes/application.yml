@@ -1,0 +1,14 @@
+server:
+  port: 8081    
+spring:     #定义springmvc视图解析器
+  mvc:    view:      prefix: /WEB-INF/views/
+      suffix: .jsp
+
+dubbo:
+  scan:
+    basePackages: com.xxzd  #包扫描路径
+  application:
+    name: consumer-web   #服务名  可以调用其他服务
+  registry:               #注册中心地址
+    address: zookeeper://192.168.14.129:2181?backup=192.168.14.129:2182,192.168.14.129:2183
+  

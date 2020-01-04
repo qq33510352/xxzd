@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xxzd.mapper.RolesModulesMapper">
+	<delete id="deleteModulesByRoleIds">
+		delete from roles_modules where 
+		<foreach collection="array" item="roleId" separator="or">
+			role_id=#{roleId}
+		</foreach>
+	</delete>
+	
+	<delete id="deleteByModules">
+		delete from roles_modules where 
+		<foreach collection="array" item="moduleId" separator="or">
+			module_id=#{moduleId}
+		</foreach>
+	</delete>
+	<!-- id moduleIds -->
+	<insert id="add">
+		insert into roles_modules values<!-- insert into roles_modules values (1,2),(3,4) -->
+		<foreach collection="moduleIds" separator="," item="moduleId">
+			(#{roleId},#{moduleId})
+		</foreach>
+	</insert>
+</mapper>
