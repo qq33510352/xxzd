@@ -1,3 +1,0 @@
-{
-	"title":"我是节点标题","id":1,"field":"我是字段名","children":[{title: '子节点1',id: '111'}],"spread":true,"disabled":false
-}
